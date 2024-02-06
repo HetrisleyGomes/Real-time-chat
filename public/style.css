@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'Trench';
+  font-weight: 400;
+  src: url('./assets/trench100free.otf');
+}
+
+:root {
+  box-sizing: border-box;
+  --color-strong: #0056d2;
+  --color-main: #547bee;
+  --color-sub: #599cff;
+  --gray-color: #777;
+  --color-light: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-family: 'montserrat';
+  overflow-y: hidden;
+}
+
+body {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  font-family: 'Trench';
+  background: linear-gradient(to right, var(--color-strong), var(--color-sub));
+  color: var(--color-light);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 1.4rem 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-width: 70%;
+  height: 12%;
+  flex-grow: 1;
+}
+
+#mensagens {
+  height: 12%;
+  background-color: #eaeaea;
+  flex-grow: 1;
+  width: 100%;
+  font-size: 16px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.mensagem {
+  display: block;
+  background-color: var(--gray-color);
+  color: var(--color-light);
+  width: 85%;
+  height: 18px;
+  margin: 16px auto;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+#mensagens > .mensagem:last-of-type {
+  background-color: var(--color-sub);
+}
+
+#envio-mensagens {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  min-width: 40%;
+  max-height: 3rem;
+  & > input {
+    flex-grow: 1;
+    padding: 0.5rem 0.3rem;
+    font-size: 16px;
+  }
+  & > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: linear-gradient(to right, var(--color-strong), var(--color-sub));
+    color: var(--color-light);
+    padding: 0.8rem;
+    border: none;
+    border-radius: 12px;
+    margin-left: 0.5rem;
+    &:hover {
+      background: var(--color-sub);
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    width: 90%;
+  }
+}
